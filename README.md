@@ -9,7 +9,7 @@ Download and install Java JDK 8 or above from Oracle
 Clone the repository
 Make a clone from the repository onto your machine
 
-git clone https://github.com/ppaunovski/Bus-GO.git
+git clone https://github.com/mgorgiev/GymBuddies.git
 Then open the project in your IDE of choice (preferably IntelliJ)
 
 Connect to the database
