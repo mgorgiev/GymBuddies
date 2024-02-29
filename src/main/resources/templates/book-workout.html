@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+<form method="post" th:action="@{'/gyms/book'}">
+  <div style="width: 300px; height: 300px; margin: auto; margin-top: 50px" >
+    <div style="padding: 20px">
+      <label>Duration:</label>
+      <input name="durationinminutes" type="number" style="width: 200px; height: 25px;" required >
+    </div>
+    <div style="padding: 20px">
+      <label>Type:</label>
+      <select name="type"  required>
+        <option th:each="type : ${workoutType}" th:text="${type.name()}" th:value="${type}"></option>
+      </select>
+    </div>
+
+    <div style="padding: 20px">
+      <label>Price:</label>
+      <input name="price" type="number" style="width: 200px; height: 25px;" required>
+    </div>
+    <div style="padding: 20px">
+      <label>Gyms:</label>
+      <select name="gym" required>
+        <option th:each="gym : ${gyms}"  th:text="${gym.getName()}" th:value="${gym.getId()}"></option>
+      </select>
+    </div>
+
+    <div style="padding: 20px">
+      <input type="submit" style="width: 200px; height: 25px;" required>
+    </div>
+  </div>
+</form>
+</body>
+</html>

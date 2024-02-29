@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th th:if="${instructor!='true'}">
+    <a href="/auth/register-instructor">Register as Instructor</a>
+</th>
+<a href="/logout">Logout</a>
+<th th:if="${member!='true'}">
+    <a href="/auth/register-member">Register as Member</a>
+</th>
+<th th:if="${member=='true'}">
+
+    <ul th:each="ins : ${instructors}">
+        <form method="get" th:action="@{'/gyms/book'}">
+
+        <li>
+           <span th:text="${ins.getEmail()} "></span>
+            <span th:text="${ins.getFirstname()}"> </span>
+            <span th:text="${ins.getLastname()}"> </span>
+            <span th:text="${ins.getGender()}"> </span>
+            <span th:text="${ins.getPhonenumber()}"> </span>
+            <span>
+                                    <input type="submit" value="Book workout"></span>
+
+        </li>
+        </form>
+    </ul>
+</th>
+<th >
+
+    <ul th:each="wor : ${workouts}">
+
+            <li>
+                <span th:text="${wor.getType()}"></span>
+
+                <span th:text="${wor.getPrice()}"></span>
+
+
+            </li>
+    </ul>
+</th>
+
+</body>
+</html>
